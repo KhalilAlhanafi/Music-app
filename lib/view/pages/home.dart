@@ -3,160 +3,188 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/view/pages/player.dart';
 
+// Static constant data moved outside the widget
+const List<Map<String, String>> recentlyPlayedSongs = [
+  {
+    'title': 'PUFFIN ON ZOOTIEZ',
+    'artist': 'Futur',
+    'image': 'assets/images/Zootiez.png',
+    'audio': 'assets/audio/PUFFIN.mp3',
+  },
+  {
+    'title': 'Flocky Flocky (feat.Traviss Scott)',
+    'artist': 'Don Toliver',
+    'image': 'assets/images/Flocky.png',
+    'audio': 'assets/audio/Flocky.mp3',
+  },
+  {
+    'title': 'Lelly Yah',
+    'artist': 'Marwan Pablo',
+    'image': 'assets/images/Lelly.png',
+    'audio': 'assets/audio/Lelly.mp3',
+  },
+  {
+    'title': 'Amrikkka',
+    'artist': 'Shabjdeed,Al Nather',
+    'image': 'assets/images/Amrikkka.jpg',
+    'audio': 'assets/audio/Amrikkka.mp3',
+  },
+  {
+    'title': 'Blinding Lights',
+    'artist': 'The Weeknd',
+    'image': 'assets/images/blinding.jpg',
+    'audio': 'assets/audio/song5.mp3',
+  },
+];
+
+const List<Map<String, String>> recommendedSongs = [
+  {
+    'title': 'Ghaba',
+    'artist': 'Marwan Pablo',
+    'image': 'assets/images/Ghaba.png',
+    'audio': 'assets/audio/song6.mp3',
+  },
+  {
+    'title': 'PURPLE RAIN (FEAT.FUTURE & METRO BOOMIN)',
+    'artist': 'Don Toliver',
+    'image': 'assets/images/Purple.jpg',
+    'audio': 'assets/audio/song7.mp3',
+  },
+  {
+    'title': 'EVIL JORDAN',
+    'artist': 'PlayboyCarti',
+    'image': 'assets/images/Evil.jpg',
+    'audio': 'assets/audio/song8.mp3',
+  },
+  {
+    'title': 'Chitheb',
+    'artist': 'Shabjdeed,Al Nather',
+    'image': 'assets/images/Chetheb.jpg',
+    'audio': 'assets/audio/song9.mp3',
+  },
+  {
+    'title': 'Thank God',
+    'artist': 'traviss Scott',
+    'image': 'assets/images/Thank.jpg',
+    'audio': 'assets/audio/song10.mp3',
+  },
+];
+
+const List<Map<String, String>> artistsBasedOnTaste = [
+  {'name': 'Yeat', 'image': 'assets/images/yeat.jpg'},
+  {'name': 'Future', 'image': 'assets/images/future.jpg'},
+  {'name': 'Shabjdeed', 'image': 'assets/images/shabjdeed.jpg'},
+  {'name': 'Don Toliver', 'image': 'assets/images/don.jpg'},
+  {'name': '21 Savage', 'image': 'assets/images/savage.jpg'},
+  {'name': 'Travis Scott', 'image': 'assets/images/travis.jpg'},
+  {'name': 'Marwan Pablo', 'image': 'assets/images/marwan.jpg'},
+  {'name': 'Metro Boomin', 'image': 'assets/images/metro.jpg'},
+];
+
+const List<Map<String, String>> topCharts = [
+  {
+    'title': 'Leather Coat',
+    'artist': 'Don Toliver',
+    'image': 'assets/images/Leather.jpg',
+    'audio': 'assets/audio/song11.mp3',
+  },
+  {
+    'title': 'Overload',
+    'artist': 'Future , Metro Boomin',
+    'image': 'assets/images/Overload.jpg',
+    'audio': 'assets/audio/song12.mp3',
+  },
+  {
+    'title': 'If We Being Real',
+    'artist': 'Yeat',
+    'image': 'assets/images/if_we.jpg',
+    'audio': 'assets/audio/song13.mp3',
+  },
+  {
+    'title': 'Creepin\'',
+    'artist': 'Metro Boomin, The Weeknd, 21 Savage',
+    'image': 'assets/images/Creepin.jpg',
+    'audio': 'assets/audio/song14.mp3',
+  },
+  {
+    'title': 'ALL RED',
+    'artist': 'Playboy Carti',
+    'image': 'assets/images/all_red.png',
+    'audio': 'assets/audio/song15.mp3',
+  },
+];
+
+const List<Map<String, String>> playlists = [
+  {
+    'name': 'Today\'s Top Hits',
+    'description': 'The most popular songs right now',
+    'image': 'assets/images/Creepin.jpg',
+    'audio': 'assets/audio/song1.mp3',
+  },
+  {
+    'name': 'Chill Vibes',
+    'description': 'Relaxing tunes for your day',
+    'image': 'assets/images/Free.jpg',
+    'audio': 'assets/audio/song2.mp3',
+  },
+  {
+    'name': 'Workout Energy',
+    'description': 'Pump up your exercise routine',
+    'image': 'assets/images/Drake.jpg',
+    'audio': 'assets/audio/song3.mp3',
+  },
+  {
+    'name': 'Focus Flow',
+    'description': 'Concentration enhancing tracks',
+    'image': 'assets/images/VULTURES.png',
+    'audio': 'assets/audio/song4.mp3',
+  },
+];
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  // Sample song data with images and audio paths
-  final List<Map<String, String>> recentlyPlayedSongs = const [
-    {
-      'title': 'PUFFIN ON ZOOTIEZ',
-      'artist': 'Futur',
-      'image': 'assets/images/Zootiez.png',
-      'audio': 'assets/audio/PUFFIN.mp3',
-    },
-    {
-      'title': 'Flocky Flocky (feat.Traviss Scott)',
-      'artist': 'Don Toliver',
-      'image': 'assets/images/Flocky.png',
-      'audio': 'assets/audio/Flocky.mp3',
-    },
-    {
-      'title': 'Lelly Yah',
-      'artist': 'Marwan Pablo',
-      'image': 'assets/images/Lelly.png',
-      'audio': 'assets/audio/Lelly.mp3',
-    },
-    {
-      'title': 'Amrikkka',
-      'artist': 'Shabjdeed,Al Nather',
-      'image': 'assets/images/Amrikkka.jpg',
-      'audio': 'assets/audio/Amrikkka.mp3',
-    },
-    {
-      'title': 'Blinding Lights',
-      'artist': 'The Weeknd',
-      'image': 'assets/images/blinding.jpg',
-      'audio': 'assets/audio/song5.mp3',
-    },
-  ];
-
-  final List<Map<String, String>> recommendedSongs = const [
-    {
-      'title': 'Ghaba',
-      'artist': 'Marwan Pablo',
-      'image': 'assets/images/Ghaba.png',
-      'audio': 'assets/audio/song6.mp3',
-    },
-    {
-      'title': 'PURPLE RAIN (FEAT.FUTURE & METRO BOOMIN)',
-      'artist': 'Don Toliver',
-      'image': 'assets/images/Purple.jpg',
-      'audio': 'assets/audio/song7.mp3',
-    },
-    {
-      'title': 'EVIL JORDAN',
-      'artist': 'PlayboyCarti',
-      'image': 'assets/images/Evil.jpg',
-      'audio': 'assets/audio/song8.mp3',
-    },
-    {
-      'title': 'Chitheb',
-      'artist': 'Shabjdeed,Al Nather',
-      'image': 'assets/images/Chetheb.jpg',
-      'audio': 'assets/audio/song9.mp3',
-    },
-    {
-      'title': 'Thank God',
-      'artist': 'traviss Scott',
-      'image': 'assets/images/Thank.jpg',
-      'audio': 'assets/audio/song10.mp3',
-    },
-  ];
-
-  final List<Map<String, String>> artistsBasedOnTaste = const [
-    {'name': 'Yeat', 'image': 'assets/images/yeat.jpg'},
-    {'name': 'Future', 'image': 'assets/images/future.jpg'},
-    {'name': 'Shabjdeed', 'image': 'assets/images/shabjdeed.jpg'},
-    {'name': 'Don Toliver', 'image': 'assets/images/don.jpg'},
-    {'name': '21 Savage', 'image': 'assets/images/savage.jpg'},
-    {'name': 'Travis Scott', 'image': 'assets/images/travis.jpg'},
-    {'name': 'Marwan Pablo', 'image': 'assets/images/marwan.jpg'},
-    {'name': 'Metro Boomin', 'image': 'assets/images/metro.jpg'},
-  ];
-
-  final List<Map<String, String>> topCharts = const [
-    {
-      'title': 'Leather Coat',
-      'artist': 'Don Toliver',
-      'image': 'assets/images/Leather.jpg',
-      'audio': 'assets/audio/song11.mp3',
-    },
-    {
-      'title': 'Overload',
-      'artist': 'Future , Metro Boomin',
-      'image': 'assets/images/Overload.jpg',
-      'audio': 'assets/audio/song12.mp3',
-    },
-    {
-      'title': 'If We Being Real',
-      'artist': 'Yeat',
-      'image': 'assets/images/if_we.jpg',
-      'audio': 'assets/audio/song13.mp3',
-    },
-    {
-      'title': 'Creepin\'',
-      'artist': 'Metro Boomin, The Weeknd, 21 Savage',
-      'image': 'assets/images/Creepin.jpg',
-      'audio': 'assets/audio/song14.mp3',
-    },
-    {
-      'title': 'ALL RED',
-      'artist': 'Playboy Carti',
-      'image': 'assets/images/all_red.png',
-      'audio': 'assets/audio/song15.mp3',
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 250),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 250),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildWelcomeSection(),
+              const _WelcomeSection(),
               const SizedBox(height: 24),
 
-              _buildSectionHeader('Recently Played'),
+              _SectionHeader(title: 'Recently Played', onMorePressed: () {}),
               const SizedBox(height: 12),
-              _buildHorizontalMusicList(context, recentlyPlayedSongs),
+              _HorizontalMusicList(songs: recentlyPlayedSongs),
               const SizedBox(height: 24),
 
-              _buildSectionHeader('Recommended For You'),
+              _SectionHeader(
+                title: 'Recommended For You',
+                onMorePressed: () {},
+              ),
               const SizedBox(height: 12),
-              _buildVerticalMusicList(context, recommendedSongs),
+              _VerticalMusicList(songs: recommendedSongs),
               const SizedBox(height: 24),
 
-              _buildSectionHeader('Popular Playlists'),
+              _SectionHeader(title: 'Popular Playlists', onMorePressed: () {}),
               const SizedBox(height: 12),
-              _buildPlaylistGrid(context), // now fixed height
+              _PlaylistGrid(),
               const SizedBox(height: 24),
 
-              _buildSectionHeader('Artists based on your taste'),
+              _SectionHeader(
+                title: 'Artists based on your taste',
+                onMorePressed: () {},
+              ),
               const SizedBox(height: 12),
-              _buildArtistsList(artistsBasedOnTaste),
+              _ArtistsList(artists: artistsBasedOnTaste),
               const SizedBox(height: 24),
 
-              _buildSectionHeader('Recently Played'),
+              _SectionHeader(title: 'Top Charts', onMorePressed: () {}),
               const SizedBox(height: 12),
-              _buildHorizontalMusicList(context, recentlyPlayedSongs),
-              const SizedBox(height: 24),
-
-              _buildSectionHeader('Top Charts'),
-              const SizedBox(height: 12),
-              _buildChartList(context, topCharts),
+              _ChartList(songs: topCharts),
               const SizedBox(height: 24),
             ],
           ),
@@ -164,8 +192,16 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildWelcomeSection() {
+class _WelcomeSection extends StatelessWidget {
+  const _WelcomeSection();
+
+  @override
+  Widget build(BuildContext context) {
+    final colorGrey800 = Colors.grey[800];
+    final colorGrey600 = Colors.grey[600];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -174,19 +210,27 @@ class HomePage extends StatelessWidget {
           style: TextStyle(
             fontSize: 34,
             fontWeight: FontWeight.bold,
-            color: Colors.grey[800],
+            color: colorGrey800,
           ),
         ),
         const SizedBox(height: 8),
         Text(
           'What would you like to listen today?',
-          style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+          style: TextStyle(fontSize: 16, color: colorGrey600),
         ),
       ],
     );
   }
+}
 
-  Widget _buildSectionHeader(String title) {
+class _SectionHeader extends StatelessWidget {
+  final String title;
+  final VoidCallback onMorePressed;
+
+  const _SectionHeader({required this.title, required this.onMorePressed});
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -195,167 +239,195 @@ class HomePage extends StatelessWidget {
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: onMorePressed,
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            minimumSize: Size.zero,
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          ),
           child: const Text(
             'More',
-            style: TextStyle(
-              color: Colors.blue, // Or use your app's primary color
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          style: TextButton.styleFrom(
-            padding: EdgeInsets.zero, // Removes extra padding
-            minimumSize: Size.zero, // Makes button as small as its content
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w500),
           ),
         ),
       ],
     );
   }
+}
 
-  Widget _buildHorizontalMusicList(
-    BuildContext context,
-    List<Map<String, String>> songs,
-  ) {
+class _HorizontalMusicList extends StatelessWidget {
+  final List<Map<String, String>> songs;
+
+  const _HorizontalMusicList({required this.songs});
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       height: 180,
-      child: ListView.builder(
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: songs.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 12),
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () => _navigateToPlayer(context, songs[index]),
-            child: Container(
-              width: 150,
-              margin: const EdgeInsets.only(right: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                        image: AssetImage(songs[index]['image']!),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    songs[index]['title']!,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    maxLines: 1,
-                  ),
-                  Text(
-                    songs[index]['artist']!,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 12,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    maxLines: 1,
-                  ),
-                ],
-              ),
-            ),
+          final song = songs[index];
+          return _MusicCardHorizontal(
+            title: song['title']!,
+            artist: song['artist']!,
+            imagePath: song['image']!,
+            onTap: () => _navigateToPlayer(context, song),
           );
         },
       ),
     );
   }
+}
 
-  Widget _buildVerticalMusicList(
-    BuildContext context,
-    List<Map<String, String>> songs,
-  ) {
-    return Column(
-      children: List.generate(songs.length, (index) {
-        return GestureDetector(
-          onTap: () => _navigateToPlayer(context, songs[index]),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: Row(
+class _MusicCardHorizontal extends StatelessWidget {
+  final String title;
+  final String artist;
+  final String imagePath;
+  final VoidCallback onTap;
+
+  const _MusicCardHorizontal({
+    required this.title,
+    required this.artist,
+    required this.imagePath,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 150,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              artist,
+              style: TextStyle(color: Colors.grey[600], fontSize: 12),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _VerticalMusicList extends StatelessWidget {
+  final List<Map<String, String>> songs;
+
+  const _VerticalMusicList({required this.songs});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: songs.length,
+      separatorBuilder: (_, __) => const SizedBox(height: 12),
+      itemBuilder: (context, index) {
+        final song = songs[index];
+        return _MusicCardVertical(
+          title: song['title']!,
+          artist: song['artist']!,
+          imagePath: song['image']!,
+          onTap: () => _navigateToPlayer(context, song),
+        );
+      },
+    );
+  }
+}
+
+class _MusicCardVertical extends StatelessWidget {
+  final String title;
+  final String artist;
+  final String imagePath;
+  final VoidCallback onTap;
+
+  const _MusicCardVertical({
+    required this.title,
+    required this.artist,
+    required this.imagePath,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              image: DecorationImage(
+                image: AssetImage(imagePath),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
-                      image: AssetImage(songs[index]['image']!),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        songs[index]['title']!,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        songs[index]['artist']!,
-                        style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                      ),
-                    ],
-                  ),
+                Text(
+                  artist,
+                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
               ],
             ),
           ),
-        );
-      }),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+        ],
+      ),
     );
   }
+}
 
-  Widget _buildPlaylistGrid(BuildContext context) {
-    final List<Map<String, String>> playlists = const [
-      {
-        'name': 'Today\'s Top Hits',
-        'description': 'The most popular songs right now',
-        'image': 'assets/images/Creepin.jpg',
-        'audio': 'assets/audio/song1.mp3',
-      },
-      {
-        'name': 'Chill Vibes',
-        'description': 'Relaxing tunes for your day',
-        'image': 'assets/images/Free.jpg',
-        'audio': 'assets/audio/song2.mp3',
-      },
-      {
-        'name': 'Workout Energy',
-        'description': 'Pump up your exercise routine',
-        'image': 'assets/images/Drake.jpg',
-        'audio': 'assets/audio/song3.mp3',
-      },
-      {
-        'name': 'Focus Flow',
-        'description': 'Concentration enhancing tracks',
-        'image': 'assets/images/VULTURES.png',
-        'audio': 'assets/audio/song4.mp3',
-      },
-    ];
+class _PlaylistGrid extends StatelessWidget {
+  const _PlaylistGrid();
 
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
-      height: 300, // Or calculate dynamically based on item count
+      height: 300,
       child: GridView.builder(
-        physics:
-            const NeverScrollableScrollPhysics(), // disable internal scroll
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: playlists.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,
           childAspectRatio: 1.5,
         ),
-        itemCount: playlists.length,
         itemBuilder: (context, index) {
           final playlist = playlists[index];
           return GestureDetector(
@@ -379,7 +451,7 @@ class HomePage extends StatelessWidget {
               ),
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -410,35 +482,41 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildArtistsList(List<Map<String, String>> artists) {
+class _ArtistsList extends StatelessWidget {
+  final List<Map<String, String>> artists;
+
+  const _ArtistsList({required this.artists});
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
-      height: 120, // Adjust height as needed
-      child: ListView.builder(
+      height: 120,
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: artists.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 16),
         itemBuilder: (context, index) {
-          return Container(
-            width: 80, // Adjust width as needed
-            margin: const EdgeInsets.only(right: 16),
+          final artist = artists[index];
+          return SizedBox(
+            width: 80,
             child: Column(
               children: [
-                // Circle Avatar
                 CircleAvatar(
-                  radius: 40, // Adjust size as needed
-                  backgroundImage: AssetImage(artists[index]['image']!),
+                  radius: 40,
+                  backgroundImage: AssetImage(artist['image']!),
                 ),
                 const SizedBox(height: 8),
-                // Artist Name
                 Text(
-                  artists[index]['name']!,
+                  artist['name']!,
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
-                  textAlign: TextAlign.center,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -447,82 +525,72 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildChartList(
-    BuildContext context,
-    List<Map<String, String>> songs,
-  ) {
-    return Column(
-      children: List.generate(songs.length, (index) {
+class _ChartList extends StatelessWidget {
+  final List<Map<String, String>> songs;
+
+  const _ChartList({required this.songs});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: songs.length,
+      separatorBuilder: (_, __) => const SizedBox(height: 12),
+      itemBuilder: (context, index) {
+        final song = songs[index];
         return GestureDetector(
-          onTap: () => _navigateToPlayer(context, songs[index]),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: Row(
-              children: [
-                Container(
-                  width: 40,
-                  alignment: Alignment.center,
-                  child: Text(
-                    '${index + 1}',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
+          onTap: () => _navigateToPlayer(context, song),
+          child: Row(
+            children: [
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: AssetImage(song['image']!),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      song['title']!,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    image: DecorationImage(
-                      image: AssetImage(songs[index]['image']!),
-                      fit: BoxFit.cover,
+                    Text(
+                      song['artist']!,
+                      style: TextStyle(color: Colors.grey[600], fontSize: 12),
                     ),
-                  ),
+                  ],
                 ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        songs[index]['title']!,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        songs[index]['artist']!,
-                        style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => _navigateToPlayer(context, songs[index]),
-                  icon: const Icon(Icons.play_circle_fill, color: Colors.blue),
-                ),
-              ],
-            ),
+              ),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+            ],
           ),
         );
-      }),
+      },
     );
   }
+}
 
-  void _navigateToPlayer(BuildContext context, Map<String, String> songData) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => PlayerPage(
-          songTitle: songData['title']!,
-          artist: songData['artist']!,
-          imagePath: songData['image']!,
-          audioPath: songData['audio']!,
-        ),
+void _navigateToPlayer(BuildContext context, Map<String, String> song) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => PlayerPage(
+        audioPath: song['audio']!,
+        songTitle: song['title']!,
+        artist: song['artist']!, // changed here
+        imagePath: song['image']!, // changed here
       ),
-    );
-  }
+    ),
+  );
 }
