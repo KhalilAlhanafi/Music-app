@@ -110,6 +110,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         minHeight: 70,
         maxHeight: MediaQuery.of(context).size.height * 0.85,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        isDraggable: false,
         panelBuilder: (sc) => PlayerPage(
           // This is your full player
           songTitle: "Lelly Yah Song",
