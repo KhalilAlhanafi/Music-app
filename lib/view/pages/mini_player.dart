@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/view/pages/audio_manager.dart';
-import 'package:flutter_application_2/view/pages/player.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:vipe_mind/view/pages/audio_manager.dart';
+import 'package:vipe_mind/view/pages/player.dart';
 
 class MiniPlayer extends StatefulWidget {
   final VoidCallback onExpand;

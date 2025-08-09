@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/view/pages/login_page.dart';
 import 'package:lottie/lottie.dart';
+import 'package:vipe_mind/view/pages/login_page.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});

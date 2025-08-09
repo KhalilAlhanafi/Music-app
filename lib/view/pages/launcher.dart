@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/view/widget_tree.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_application_2/view/pages/welcome.dart';
+import 'package:vipe_mind/view/pages/welcome.dart';
+import 'package:vipe_mind/view/widget_tree.dart';
 
 class Launcher extends StatelessWidget {
   const Launcher({super.key});

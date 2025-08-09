@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/view/widget_tree.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vipe_mind/view/widget_tree.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});

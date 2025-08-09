@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/view/pages/player.dart';
+import 'package:vipe_mind/view/pages/player.dart';
 
 // Static constant data moved outside the widget
 const List<Map<String, String>> recentlyPlayedSongs = [

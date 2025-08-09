@@ -14,7 +14,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../widget/nav_bar.dart';
 import 'pages/setting.dart';
 
-List<Widget> pages = [HomePage(), Search(), Live(), MyMusic()];
+List<Widget> pages = [HomePage(), SearchPage(), Live(), MyMusic()];
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
